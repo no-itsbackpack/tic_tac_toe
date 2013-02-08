@@ -1,4 +1,7 @@
 TicTacToe::Application.routes.draw do
+  resources :positions
+
+
   resources :boards
 
 
