@@ -1,3 +1,4 @@
 class Position < ActiveRecord::Base
-  # attr_accessible :title, :body
+  belongs_to :board
+  attr_accessible :row, :col, :player
 end
