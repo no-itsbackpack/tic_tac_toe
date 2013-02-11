@@ -2,7 +2,6 @@
   <% if @position.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@position.errors.count, "error") %> prohibited this position from being saved:</h2>
-
       <ul>
       <% @position.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -11,6 +10,17 @@
     </div>
   <% end %>
 
+  <li><%= f.label :player %>
+  <%= f.text_field :player %>
+  </li>
+  <li>
+  <%= f.label :column %>
+  <%= f.text_field :col %>
+  </li>
+  <li>
+  <%= f.label :row %>
+  <%= f.text_field :row %>
+  </li>
   <div class="actions">
     <%= f.submit %>
   </div>

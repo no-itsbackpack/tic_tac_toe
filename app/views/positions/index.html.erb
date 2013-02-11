@@ -2,13 +2,16 @@
 
 <table>
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Player</th>
+    <th>Row</th>
+    <th>Column</th>
   </tr>
 
 <% @positions.each do |position| %>
   <tr>
+    <td><%=  position.player %></td>
+    <td><%=  position.row %></td>
+    <td><%=  position.col %></td>
     <td><%= link_to 'Show', position %></td>
     <td><%= link_to 'Edit', edit_position_path(position) %></td>
     <td><%= link_to 'Destroy', position, method: :delete, data: { confirm: 'Are you sure?' } %></td>
