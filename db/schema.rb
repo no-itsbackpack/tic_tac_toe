@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20130208205432) do
   end
 
   create_table "positions", :force => true do |t|
-    t.integer  "boards_id"
+    t.integer  "board_id"
     t.integer  "row"
     t.integer  "col"
     t.integer  "player"

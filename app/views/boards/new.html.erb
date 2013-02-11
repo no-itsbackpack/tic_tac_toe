@@ -1,5 +1,45 @@
-<h1>New board</h1>
+<h1>New Game</h1>
 
-<%= render 'form' %>
 
-<%= link_to 'Back', boards_path %>
+
+<table border="1">
+<tr>
+<td>row 1, col 1</td>
+<td>row 1, col 1</td>
+<td>row 1, col 1</td>
+</tr>
+<tr>
+<td>row 2, col 2</td>
+<td>row 2, col 2</td>
+<td>row 2, col 2</td>
+</tr>
+<td>row 3, col 3</td>
+<td>row 3, col 3</td>
+<td>row 3, col 3</td>
+</table>
+
+<br>
+    <%= @board %>
+
+    <%= @positions.row%>
+
+    <%= form_for(@positions) do |f| %>
+      <p><%= f.label :player %></p>
+	  <p><%= f.text_field :player %><p>
+	  
+	  <p><%= f.label :column %></p>
+	  <p><%= f.text_field :col %></p>
+	  
+	 
+	  <p><%= f.label :row %></p>
+	  <p><%= f.text_field :row %></p>
+
+	   <div >
+    	<%= f.submit "PLAY"%>
+  	   </div>
+    <% end %>
+   
+
+      
+<br>
+

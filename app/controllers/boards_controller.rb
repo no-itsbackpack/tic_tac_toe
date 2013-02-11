@@ -1,30 +1,34 @@
 class BoardsController < ApplicationController
   # GET /boards
   # GET /boards.json
-  def index
-    @boards = Board.all
+
+#board = @board.find param[:id]
+#position = Positions.create
+
+ 
+
+  def play
+    #@board = Board.find(params[:id])
+
+    #current_positions = @board.positions.new(params[:positions])
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @boards }
+      format.html {redirect_to boards_url}
     end
+    #respond_to do |format|
+     # if @position.save
+      #  format.html { redirect_to boards_url, notice: 'Position was successfully created.' }
+      #else
+      #  format.html { render action: "new" }
+      #end
+    #end
   end
 
-  # GET /boards/1
-  # GET /boards/1.json
-  def show
-    @board = Board.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @board }
-    end
-  end
 
-  # GET /boards/new
-  # GET /boards/new.json
   def new
     @board = Board.new
+    @positions = @board.positions.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -32,13 +36,7 @@ class BoardsController < ApplicationController
     end
   end
 
-  # GET /boards/1/edit
-  def edit
-    @board = Board.find(params[:id])
-  end
 
-  # POST /boards
-  # POST /boards.json
   def create
     @board = Board.new(params[:board])
 
